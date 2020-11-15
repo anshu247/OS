@@ -1,0 +1,150 @@
+a) Write A Shell Program of Hello World
+
+$ vi hello.sh
+-------------------------------
+|  #!/bin/sh                  |
+|  echo "what is your name?"  |
+|  read person                |
+|  echo "Hello, $person"      |
+ ------------------------------
+Press esc+ ctrl : wq
+bash hello.sh
+
+b) Write a shell program to find factorial of a number.
+$ vi factorial.sh
+-------------------------------
+|  #!/bin/sh                  |
+|  echo "Enter the number -"  |
+|  read num                   |
+|  fact=1                     |
+|   for((i=2;i<=num;i++)      |
+|    {                        |
+|      fact=$((fact*i))       |
+|     }                       |
+|    echo $fact               |
+ ------------------------------
+Press esc+ ctrl : wq
+bash factorial.sh
+
+c) Write a shell program to find gross salary of an employee.
+
+$ vi gross.sh
+---------------------------------------------------------------
+|#!/bin/bash                                                  |
+|echo "Enter the salary"                                      |
+|read sal                                                     |
+|echo "What is HRA percent"                                   |
+|read hra                                                     |
+|echo "What is the medical allowance percentage"              |
+|read m                                                       |
+|echo "what is DA percentage"                                 |
+|read da                                                      |
+|gsal=$((sal+((sal/100)*hra)+((sal/100)*da)+((sal/100)*m)))   |
+|echo "Gross Salary is : $gsal"                               |
+|fi                                                           |
+ --------------------------------------------------------------
+Press esc+ ctrl : wq
+bash gross.sh
+
+d) Write a shell program to display the menu and execute instructions accordingly
+(i)List of files (ii)Process Status (iii) Date (iv) users in program (v) Quit
+---------------------------------------------------------------------------------------
+
+#!/bin/sh
+echo "Choose from the below option"
+echo "Choose 1 => To see the list of files and folder in the current directory"
+
+echo "Choose 2 =>To see the process status"
+
+echo "Choose 3 =>To see the Date"
+
+echo "Choose 4 =>user in the program"
+
+echo "Choose 5 =>Exit"
+chk=true
+while((chk==true))
+do
+read choice
+if((choice==1))
+then
+ls
+elif((choice==2))
+then
+ps aux
+elif((choice==3))
+then
+date
+elif((choice==4))
+then
+users
+elif((choice==5))
+then
+break
+else
+echo "Invaild Choice"
+fi
+done
+----------------------------------------------------------------------------------------
+e) Write a shell program to find Fibonacci series.
+
+-----------------------------------------------------------------
+#!/bin/sh
+read N
+a=0
+b=1
+echo "The Fibonacci Series of ,$N"
+for((i=0;i<N;i++)){
+echo -n "$a "
+fn=$((a+b))
+a=$b
+b=$fn
+}
+
+-----------------------------------------------------------------
+
+f) Write a shell program to find largest of three numbers.
+----------------------------------------------------------------------
+
+
+
+#!/bin/sh
+
+echo "Enter 3 number with space in between"
+read a b c
+if((a>b & a>c))
+then
+echo $a is largest
+elif((b>a & b>c))
+then
+echo $b is largest
+else
+echo $c is largest
+fi
+---------------------------------------------------------------------
+
+g) Write a shell program to find average of N numbers
+
+
+--------------------------------------------------------------
+#!/bin/sh
+echo "Enter how many number you want to average"
+
+read n
+
+sum=0
+
+for((i=1;i<=n;i++))
+{
+
+echo "Enter $i  number"
+
+read num
+
+
+sum=$((sum+num))
+
+}
+
+v=$((sum / n))
+echo "Average of $n number are $v"
+--------------------------------------------------------------
